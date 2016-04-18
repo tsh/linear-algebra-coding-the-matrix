@@ -19,7 +19,7 @@ def myFilter(L, num):
       >>> myFilter([10,15,20,25],10)
       [15, 25]
     '''
-    pass
+    return [l for l in L if l % num != 0]
 
 
 
@@ -32,7 +32,14 @@ def my_lists(L):
     >>> my_lists([0,3])
     [[], [1, 2, 3]]
     '''
-    pass
+    initial = L[0]
+    def go(x):
+        if x == 0:
+            return []
+        else:
+            start = initial if initial != 0 else initial +1
+            return list(range(start, x +1))
+    return [go(el) for el in L]
 
 
 
