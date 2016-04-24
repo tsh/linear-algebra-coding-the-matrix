@@ -47,15 +47,19 @@ def myFunctionComposition(f, g):
     Examples:
       >>> f = {0:'a',1:'b'}
       >>> g = {'a':'apple','b':'banana'}
-      >>> myFunctionComposition(f,g) == {0:'apple',1:'banana'}
+      >>> set(myFunctionComposition(f,g).values()) == set({0:'apple',1:'banana'}.values())
+      True
+      >>> set(myFunctionComposition(f,g).keys()) == set({0:'apple',1:'banana'}.keys())
       True
 
       >>> a = {'x':24,'y':25}
       >>> b = {24:'twentyfour',25:'twentyfive'}
-      >>> myFunctionComposition(a,b) == {'x':'twentyfour','y':'twentyfive'}
+      >>> set(myFunctionComposition(a,b).values()) == set({'x':'twentyfour','y':'twentyfive'}.values())
+      True
+      >>> set(myFunctionComposition(a,b).keys()) == set({'x':'twentyfour','y':'twentyfive'}.keys())
       True
     '''
-    pass
+    return {k: g[v] for k, v in f.items()}
 
 
 
@@ -73,7 +77,7 @@ Be sure your procedure works for the empty list.
       >>> mySum([3,5,10])
       18
     '''
-    pass
+    return sum(L)
 
 
 
@@ -91,7 +95,13 @@ Be sure your procedure works for the empty list.
       >>> myProduct([-3,2,4])
       -24
     '''
-    pass
+    if not L:
+        return 1
+    else:
+        res = 1
+        for el in L:
+            res *= el
+        return res
 
 
 
@@ -110,7 +120,11 @@ Hint: The value of the Python expression float('infinity') is infinity.
     >>> myMin([0,3,5,-2,-5])
     -5
     '''
-    pass
+    min = float('infinity')
+    for el in L:
+        if el < min:
+            min = el
+    return min
 
 
 
@@ -128,7 +142,14 @@ Be sure your procedure works for the empty list.
     >>> myConcat(['what','is','up'])
     'whatisup'
     '''
-    pass
+    if not L:
+        return ''
+    else:
+        res = ''
+        for s in L:
+            res += s
+        return res
+
 
 
 
@@ -146,17 +167,20 @@ Be sure your procedure works for the empty list.
     >>> myUnion([set(),{3,5},{3,5}])
     {3, 5}
     '''
-    pass
-
+    result = set()
+    for s in L:
+        for el in s:
+            result.add(el)
+    return result
 
 
 ## 9: (Problem 1.7.10) Complex Addition Practice
 # Each answer should be a Python expression whose value is a complex number.
 
-complex_addition_a = ...
-complex_addition_b = ...
-complex_addition_c = ...
-complex_addition_d = ...
+complex_addition_a = 5 + 3j
+complex_addition_b = 0 + 1j
+complex_addition_c = -1 + 0.001j
+complex_addition_d = 0.001 + 9j
 
 
 
@@ -175,12 +199,15 @@ def transform(a, b, L):
     >>> transform(3,2,[1,2,3])
     [5, 8, 11]
     '''
-    pass
+    rs = []
+    for x in L:
+        rs.append(a*x + b)
+    return rs
 
 
 
 ## 11: (Problem 1.7.13) GF(2) Arithmetic
-GF2_sum_1 = ... # answer with 0 or 1
-GF2_sum_2 = ...
-GF2_sum_3 = ...
+GF2_sum_1 = 1 # answer with 0 or 1
+GF2_sum_2 = 0
+GF2_sum_3 = 0
 
