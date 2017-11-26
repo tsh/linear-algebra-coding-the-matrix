@@ -13,7 +13,11 @@ def getitem(M, k):
     0
     """
     assert k[0] in M.D[0] and k[1] in M.D[1]
-    pass
+
+    if k in M.f:
+        return M.f[k]
+    else:
+        return 0
 
 def equal(A, B):
     """
