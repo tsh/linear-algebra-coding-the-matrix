@@ -18,17 +18,17 @@ vector_matrix_product_3 = [14, 20, 26]
 # Represent your solution as a list of rowlists.
 # For example, the 2x2 identity matrix would be [[1,0],[0,1]].
 
-M_swap_two_vector = ...
+M_swap_two_vector = [[0,1],[1,0]]
 
 
 
 ## 3: (Problem 4.17.3) [z+x, y, x] Matrix-vector multiplication
-three_by_three_matrix = ... # Represent with a list of rowlists.
+three_by_three_matrix = [[1,0,1], [0,1,0], [1,0,0]] # Represent with a list of rowlists.
 
 
 
 ## 4: (Problem 4.17.4) [2x, 4y, 3z] matrix-vector multiplication
-multiplied_matrix = ... # Represent with a list of row lists.
+multiplied_matrix = [[2,0,0], [0,4,0], [0,0,3]] # Represent with a list of row lists.
 
 
 
@@ -36,33 +36,33 @@ multiplied_matrix = ... # Represent with a list of row lists.
 # Please enter a boolean representing if the multiplication is valid.
 # If it is not valid, please enter None for the dimensions.
 
-part_1_valid = ... # True or False
-part_1_number_rows = ... # Integer or None
-part_1_number_cols = ... # Integer or None
+part_1_valid = False # True or False
+part_1_number_rows = None # Integer or None
+part_1_number_cols = None # Integer or None
 
-part_2_valid = ...
-part_2_number_rows = ...
-part_2_number_cols = ...
+part_2_valid = False
+part_2_number_rows = None
+part_2_number_cols = None
 
-part_3_valid = ...
-part_3_number_rows = ...
-part_3_number_cols = ...
+part_3_valid = True
+part_3_number_rows = 1
+part_3_number_cols = 2
 
-part_4_valid = ...
-part_4_number_rows = ...
-part_4_number_cols = ...
+part_4_valid = True
+part_4_number_rows = 2
+part_4_number_cols = 1
 
-part_5_valid = ...
-part_5_number_rows = ...
-part_5_number_cols = ...
+part_5_valid = False
+part_5_number_rows = None
+part_5_number_cols = None
 
-part_6_valid = ...
-part_6_number_rows = ...
-part_6_number_cols = ...
+part_6_valid = True
+part_6_number_rows = 1
+part_6_number_cols = 1
 
-part_7_valid = ...
-part_7_number_rows = ...
-part_7_number_cols = ...
+part_7_valid = True
+part_7_number_rows = 3
+part_7_number_cols = 3
 
 
 
