@@ -43,7 +43,11 @@ def equal(A, B):
     True
     """
     assert A.D == B.D
-    pass
+    for l1 in A.D[0]:
+        for l2 in A.D[1]:
+            if A[(l1, l2)] != B[(l1, l2)]:
+                return False
+    return True
 
 def setitem(M, k, val):
     """
@@ -63,7 +67,7 @@ def setitem(M, k, val):
     True
     """
     assert k[0] in M.D[0] and k[1] in M.D[1]
-    pass
+    M.f[k] = val
 
 def add(A, B):
     """
