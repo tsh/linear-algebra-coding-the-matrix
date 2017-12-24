@@ -95,7 +95,14 @@ def add(A, B):
     True
     """
     assert A.D == B.D
-    pass
+    res = Mat(A.D, {})
+    for l1 in A.D[0]:
+        for l2 in A.D[1]:
+            val1 = A.f.get((l1, l2), 0)
+            val2 = B.f.get((l1, l2), 0)
+            if val1 or val2:
+                res[(l1, l2)] = val1 + val2
+    return res
 
 def scalar_mul(M, x):
     """
