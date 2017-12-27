@@ -11,6 +11,7 @@ G = listlist2mat([[One(), 0, One(), One()],
                   [0, 0, One(), 0],
                   [0, One(), 0, 0],
                   [One(), 0, 0, 0]])
+
 # Task 4.14.2 what is the encoding of the message [1,0,0,1]
 p = list2vec([One(), 0, 0, One()])
 encoded_p = G * p
