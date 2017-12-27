@@ -116,7 +116,18 @@ def scalar_mul(M, x):
     >>> 0.25*M == Mat(({1,3,5}, {2,4}), {(1,2):1.0, (5,4):0.5, (3,4):0.75})
     True
     """
-    pass
+    res = Mat(M.D, {})
+    for l1 in M.D[0]:
+        for l2 in M.D[1]:
+            try:
+                val = M.f[(l1, l2)] * x
+            except KeyError:
+                continue
+            if val == 0:
+                continue
+            else:
+                res[(l1, l2)] = val
+    return res
 
 def transpose(M):
     """
