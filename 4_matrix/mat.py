@@ -171,7 +171,15 @@ def vector_matrix_mul(v, M):
     True
     """
     assert M.D[0] == v.D
-    pass
+    res = Vec(M.D[1], {})
+    for col in M.D[1]:
+        dot = 0
+        for row in M.D[0]:
+            matvec = M[(row, col)] * v[row]
+            dot += matvec
+        res[row] = matvec
+    print(res)
+    return res
 
 def matrix_vector_mul(M, v):
     """
