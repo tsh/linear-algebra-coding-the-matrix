@@ -241,7 +241,15 @@ def matrix_matrix_mul(A, B):
     True
     """
     assert A.D[1] == B.D[0]
-    pass
+    res = Mat((A.D[0], B.D[1]), {})
+    for arow in A.D[0]:
+        for bcol in B.D[1]:
+            dot = 0
+            for acol_brow in A.D[1]:
+                dot += A[(arow, acol_brow)] * B[(acol_brow, bcol)]
+            res[(arow, bcol)] = dot
+    return res
+
 
 ################################################################################
 
