@@ -17,9 +17,15 @@ p = list2vec([One(), 0, 0, One()])
 encoded_p = G * p
 print(encoded_p)
 
+# Task 4.14.3
+R = listlist2mat([[0, 0, 0, 0, 0, 0, One()],
+                  [0, 0, 0, 0, 0, One(), 0],
+                  [0, 0, 0, 0, One(), 0, 0],
+                  [0, 0, One(), 0, 0, 0, 0]])
+
 # Task 4.14.4
-H = listlist2mat([[One(), 0, One(), 0, One(), 0, One()],
+H = listlist2mat([[0, 0, 0, One(), One(), One(), One()],
                   [0, One(), One(), 0, 0, One(), One()],
-                  [0, 0, 0, One(), One(), One(), One()]])
+                  [One(), 0, One(), 0, One(), 0, One()]])
 
 
