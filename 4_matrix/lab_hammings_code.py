@@ -1,7 +1,7 @@
 from mat import Mat
 from matutil import listlist2mat, mat2coldict, coldict2mat
 from vecutil import list2vec
-from bitutil import str2bits, bits2str
+from bitutil import str2bits, bits2str, bits2mat, mat2bits
 from vec import dot
 from GF2 import One
 
@@ -65,3 +65,6 @@ test_matrix = listlist2mat([[One(), 0], [One(), 0], [One(), One()]])
 s = ''.join([chr(i) for i in range(256)])
 assert bits2str(str2bits(s)) == s
 
+# Task 4.14.9 & 4.14.10 encode message string to matrix of nibbles
+msg = "I'm trying to free your mind, Neo."
+p = bits2mat(str2bits(msg))
