@@ -1,6 +1,7 @@
 from mat import Mat
 from matutil import listlist2mat, mat2coldict, coldict2mat
 from vecutil import list2vec
+from bitutil import str2bits, bits2str
 from vec import dot
 from GF2 import One
 
@@ -59,4 +60,8 @@ def find_error_matrix(s):
     return coldict2mat({pos: find_error(vec) for pos, vec in mat2coldict(s).items()})
 
 test_matrix = listlist2mat([[One(), 0], [One(), 0], [One(), One()]])
-print(find_error_matrix(test_matrix))
+
+# Task 4.14.8
+s = ''.join([chr(i) for i in range(256)])
+assert bits2str(str2bits(s)) == s
+
