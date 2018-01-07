@@ -1,5 +1,5 @@
 from mat import Mat
-from matutil import listlist2mat
+from matutil import listlist2mat, mat2coldict, coldict2mat
 from vecutil import list2vec
 from vec import dot
 from GF2 import One
@@ -53,5 +53,10 @@ syndrome = H*non_c
 e = find_error(syndrome)
 codeword = e + non_c
 message = R * codeword
-print(message)
 
+# Task 4.14.7
+def find_error_matrix(s):
+    return coldict2mat({pos: find_error(vec) for pos, vec in mat2coldict(s).items()})
+
+test_matrix = listlist2mat([[One(), 0], [One(), 0], [One(), One()]])
+print(find_error_matrix(test_matrix))
