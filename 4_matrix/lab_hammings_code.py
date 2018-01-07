@@ -1,7 +1,7 @@
 from mat import Mat
 from matutil import listlist2mat, mat2coldict, coldict2mat
 from vecutil import list2vec
-from bitutil import str2bits, bits2str, bits2mat, mat2bits
+from bitutil import str2bits, bits2str, bits2mat, mat2bits, noise
 from vec import dot
 from GF2 import One
 
@@ -67,4 +67,10 @@ assert bits2str(str2bits(s)) == s
 
 # Task 4.14.9 & 4.14.10 encode message string to matrix of nibbles
 msg = "I'm trying to free your mind, Neo."
-p = bits2mat(str2bits(msg))
+P = bits2mat(str2bits(msg))
+
+# Task 4.14.11 add noise to message
+E = noise(P, 0.02)
+EP = E + P
+perturbed_msg = bits2str(mat2bits(EP))
+print(perturbed_msg)
