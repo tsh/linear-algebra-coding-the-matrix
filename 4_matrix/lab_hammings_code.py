@@ -25,9 +25,11 @@ R = listlist2mat([[0, 0, 0, 0, 0, 0, One()],
                   [0, 0, One(), 0, 0, 0, 0]])
 
 # Task 4.14.4
-H = listlist2mat([[0, 0, 0, One(), One(), One(), One()],
+H = listlist2mat([
+                  [One(), 0, One(), 0, One(), 0, One()],
                   [0, One(), One(), 0, 0, One(), One()],
-                  [One(), 0, One(), 0, One(), 0, One()]])
+                  [0, 0, 0, One(), One(), One(), One()],
+                  ])
 
 
 def gf2_to_decimal(gf2_vec):
@@ -42,9 +44,11 @@ def gf2_to_decimal(gf2_vec):
 def find_error(e):
     """ Takes error syndrome and return error vector """
     v = gf2_to_decimal(e)
-    pos = dot(list2vec(v), list2vec([1, 2, 4])) - 1
     err_vector = [0] * 7
-    err_vector[pos] = One()
+    pos = dot(list2vec(v), list2vec([1, 2, 4]))
+    if pos:
+        pos -= 1  # array from 0
+        err_vector[pos] = One()
     return list2vec(err_vector)
 
 
@@ -73,4 +77,16 @@ P = bits2mat(str2bits(msg))
 E = noise(P, 0.02)
 EP = E + P
 perturbed_msg = bits2str(mat2bits(EP))
-print(perturbed_msg)
+
+# Task 4.14.12
+C = G*P
+
+# Task 4.14.13
+CE = noise(C, 0.02)
+CTILDE = C + CE
+perturbed_msg2 = bits2str(mat2bits(R*CTILDE))
+
+# Task 4.13.13
+def correct(A):
+    return R * (find_error_matrix(H*A) + A)
+
