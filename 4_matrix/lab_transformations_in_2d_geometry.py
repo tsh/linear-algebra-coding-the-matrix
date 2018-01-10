@@ -31,9 +31,7 @@ def scale(alpha, beta):
 def rotation(theta):
     return Mat(({'y', 'u', 'x'}, {'y', 'u', 'x'}),
                {('x', 'x'): cos(theta),
-                ('x', 'y'): sin(theta),
-                ('y', 'x'): -sin(theta),
+                ('x', 'y'): -sin(theta),
+                ('y', 'x'): sin(theta),
                 ('y', 'x'): cos(theta),
                 ('u', 'u'): 1})
-
-test_mat(rotation(360))
