@@ -46,7 +46,8 @@ def rotate_about(theta, x, y):
 >>> (rotate_about(math.pi/3, 3,4)*Vec({'x','y','u'}, {'x':1, 'y':0, 'u':1}) - Vec({'y', 'x', 'u'},{'y': 0.26794919243112214, 'x': 5.4641016151377535, 'u': 1})).is_almost_zero()
     True
     '''
-    pass
+    return translation(x, y) * rotation(theta) * translation(-x, -y)  # move to origin, rotate, move back
+
 
 ## Task 6
 def reflect_y():
