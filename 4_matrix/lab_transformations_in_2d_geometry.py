@@ -1,6 +1,7 @@
 from math import sin, cos
 from image_mat_util import file2mat, mat2display
 from mat import Mat
+from vec import Vec
 
 # Task 4.15.4
 # mat2display(*file2mat('img01.png'))
@@ -60,7 +61,12 @@ def reflect_y():
     >>> reflect_y()* Vec({'x','y','u'}, {'u':1}) == Vec({'x','y','u'},{'u':1})
     True
     '''
-    pass
+    I = identity()
+    I.f.update({
+        ('x', 'x'): -1
+    })
+    return I
+
 
 ## Task 7
 def reflect_x():
@@ -73,7 +79,11 @@ def reflect_x():
     >>> reflect_x()*Vec({'x','y','u'}, {'u':1}) == Vec({'x','y','u'},{'u':1})
     True
     '''
-    pass
+    I = identity()
+    I.f.update({
+        ('y', 'y'): -1
+    })
+    return I
 
 ## Task 8
 def scale_color(scale_r,scale_g,scale_b):
