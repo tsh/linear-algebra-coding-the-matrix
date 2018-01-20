@@ -1,8 +1,10 @@
 # version code d7da415c4b69+
 # Please fill out this stencil and submit using the provided submission script.
 
+import mat
 from mat import Mat
 from vec import Vec
+from matutil import mat2coldict, mat2rowdict
 
 
 
@@ -113,36 +115,73 @@ part_3_BA = [[3, 4, 0, -2],
 ## 8: (Problem 4.17.9) Matrix-matrix multiplication practice with very sparse matrices
 # Please represent your answer as a list of row lists.
 
-your_answer_a_AB = ...
-your_answer_a_BA = ...
+your_answer_a_AB = [[0,0,2,0],
+                    [0,0,5,0],
+                    [0,0,4,0],
+                    [0,0,6,0]]
+your_answer_a_BA = [[0,0,0,0],
+                    [4,4,4,0],
+                    [0,0,0,0],
+                    [0,0,0,0]]
 
-your_answer_b_AB = ...
-your_answer_b_BA = ...
 
-your_answer_c_AB = ...
-your_answer_c_BA = ...
+your_answer_b_AB = [[0,2,-1,0],
+                    [0,5,3,0],
+                    [0,4,0,0],
+                    [0,6,-5,0]]
+your_answer_b_BA = [[0,0,0,0],
+                    [1,5,-2,3],
+                    [0,0,0,0],
+                    [4,4,4,0]]
 
-your_answer_d_AB = ...
-your_answer_d_BA = ...
+your_answer_c_AB = [[6,0,0,0],
+                    [6,0,0,0],
+                    [8,0,0,0],
+                    [5,0,0,0]]
+your_answer_c_BA = [[4,2,1,-1],
+                    [4,2,1,-1],
+                    [0,0,0,0],
+                    [0,0,0,0]]
 
-your_answer_e_AB = ...
-your_answer_e_BA = ...
+your_answer_d_AB = [[0,3,0,4],
+                    [0,4,0,1],
+                    [0,4,0,4],
+                    [0,-6,0,-1]]
+your_answer_d_BA = [[0,11,0,-2],
+                    [0,0,0,0],
+                    [0,0,0,0],
+                    [1,5,-2,3]]
 
-your_answer_f_AB = ...
-your_answer_f_BA = ...
+your_answer_e_AB = [[0,3,0,8],
+                    [0,-9,0,2],
+                    [0,0,0,8],
+                    [0,15,0,-2]]
+your_answer_e_BA = [[-2,12,4,-10],
+                    [0,0,0,0],
+                    [0,0,0,0],
+                    [-3,-15,6,-9]]
+
+your_answer_f_AB = [[-4,4,2,-3],
+                    [-1,10,-4,9],
+                    [-4,8,8,0],
+                    [1,12,4,-15]]
+your_answer_f_BA = [[-4,-2,-1,1],
+                    [2,10,-4,6],
+                    [8,8,8,0],
+                    [-3,18,6,-15]]
 
 
 
 ## 9: (Problem 4.17.11) Column-vector and row-vector matrix multiplication
-column_row_vector_multiplication1 = Vec({0, 1}, {...:...})
+column_row_vector_multiplication1 = Vec({0, 1}, {0:13,1:20})
 
-column_row_vector_multiplication2 = Vec({0, 1, 2}, {...:...})
+column_row_vector_multiplication2 = Vec({0, 1, 2}, {0:24,1:11,2:4})
 
-column_row_vector_multiplication3 = Vec({0, 1, 2, 3}, {...:...})
+column_row_vector_multiplication3 = Vec({0, 1, 2, 3}, {0:4,1:8,2:11,3:3})
 
-column_row_vector_multiplication4 = Vec({0,1}, {...:...})
+column_row_vector_multiplication4 = Vec({0,1}, {0:30,1:16})
 
-column_row_vector_multiplication5 = Vec({0, 1, 2}, {...:...})
+column_row_vector_multiplication5 = Vec({0, 1, 2}, {0:-3,1:1,2:9})
 
 
 
@@ -168,7 +207,7 @@ def lin_comb_mat_vec_mult(M, v):
     True
     '''
     assert(M.D[1] == v.D)
-    pass
+    mat.matrix_vector_mul(M, v)
 
 
 
@@ -193,7 +232,7 @@ def lin_comb_vec_mat_mult(v, M):
       True
     '''
     assert(v.D == M.D[0])
-    pass
+    mat.vector_matrix_mul(v, M)
 
 
 
@@ -216,7 +255,9 @@ def dot_product_mat_vec_mult(M, v):
     True
     '''
     assert(M.D[1] == v.D)
-    pass
+    w = mat2rowdict(M)
+    d = {e:w[e]*v for e in w}
+    return Vec(M.D[0], d)
 
 
 
