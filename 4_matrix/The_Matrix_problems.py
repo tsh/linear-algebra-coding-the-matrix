@@ -81,14 +81,32 @@ small_mat_mult_6 = [[2, 4], [1, 1], [1, -3]]
 ## 7: (Problem 4.17.7) Matrix-matrix multiplication practice with a permutation matrix
 # Please represent your solution as a list of row lists.
 
-part_1_AB = ...
-part_1_BA = ...
+part_1_AB = [[5, 2, 0, 1],
+             [2, 1, -4, 6],
+             [2, 3, 0, -4],
+             [-2, 3, 4, 0]]
+part_1_BA = [[1, -4, 6, 2],
+             [3, 0, -4, 2],
+             [3, 4, 0, -2],
+             [2, 0, 1, 5]]
 
-part_2_AB = ...
-part_2_BA = ...
+part_2_AB = [[5, 1, 0, 2],
+             [2, 6, -4, 1],
+             [2, -4, 0, 3],
+             [-2, 0, 4, 3]]
+part_2_BA = [[3, 4, 0, -2],
+             [3, 0, -4, 2],
+             [1, -4, 6, 2],
+             [2, 0, 1, 5]]
 
-part_3_AB = ...
-part_3_BA = ...
+part_3_AB = [[1, 0, 5, 2],
+             [6, -4, 2, 1],
+             [-4, 0, 2, 3],
+             [0, 4, -2, 3]]
+part_3_BA = [[3, 4, 0, -2],
+             [1, -4, 6, 2],
+             [2, 0, 1, 5],
+             [3, 0, -4, 2]]
 
 
 
