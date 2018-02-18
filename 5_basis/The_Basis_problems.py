@@ -27,9 +27,9 @@ rep_3 = [0, 1, -1]
 # the generators of V.
 
 lin_comb_coefficients_1 = [3, -1, 1]
-lin_comb_coefficients_2 = [...]
-lin_comb_coefficients_3 = [...]
-lin_comb_coefficients_4 = [...]
+lin_comb_coefficients_2 = [0.5,-1.5,1]
+lin_comb_coefficients_3 = [0.5,-5.5,4]
+lin_comb_coefficients_4 = [1,-2,1]
 
 
 
