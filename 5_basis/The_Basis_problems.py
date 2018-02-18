@@ -38,9 +38,9 @@ lin_comb_coefficients_4 = [1,-2,1]
 # For each part, please provide your solution as a list of the coefficients for
 # the generators of V.
 
-gf2_rep_1 = [...]
-gf2_rep_2 = [...]
-gf2_rep_3 = [...]
+gf2_rep_1 = [one,0,one,0]
+gf2_rep_2 = [one,0,0,one]
+gf2_rep_3 = [one,one,0,one]
 
 
 
@@ -49,10 +49,10 @@ gf2_rep_3 = [...]
 # For each part, please provide your solution as a list of the coefficients for
 # the generators of V.
 
-gf2_lc_rep_1 = [...]
-gf2_lc_rep_2 = [...]
-gf2_lc_rep_3 = [...]
-gf2_lc_rep_4 = [...]
+gf2_lc_rep_1 = [one,one,one,0,0,0,0,0]
+gf2_lc_rep_2 = [0,0,0,0,0,0, one, one]
+gf2_lc_rep_3 = [one,0,0,one,0,0,0,0]
+gf2_lc_rep_4 = [one,0,one,0,0,0, 0, 0]
 
 
 
