@@ -83,9 +83,9 @@ linear_dep_R_3 = [1,1,1,1,1]
 # assign 'w' to sum_to, assign 2 to u_coeff, and assign 3 to v_coeff.
 # (In this case, it would not matter what was assigned to w_coeff.)
 sum_to = 'w'
-u_coeff = 1
+u_coeff = -1
 v_coeff = 1
-w_coeff = -1
+w_coeff = 1
 
 
 
