@@ -60,18 +60,18 @@ gf2_lc_rep_4 = [one,0,one,0,0,0, 0, 0]
 # For each part, please provide your solution as a list of the coefficients for
 # the generators of V.
 
-lin_dep_R_1 = [...]
-lin_dep_R_2 = [...]
-lin_dep_R_3 = [...]
+lin_dep_R_1 = [-2,1,1]
+lin_dep_R_2 = [-4,1,-4/7]
+lin_dep_R_3 = [-0.3,0,0,1,3]
 
 
 
 ## 6: (Problem 5.14.6) Linear Dependence over R B
 # Please record your solution as a list of coefficients
 
-linear_dep_R_1 = [...]
-linear_dep_R_2 = [...]
-linear_dep_R_3 = [...]
+linear_dep_R_1 = [-1,1,-3]
+linear_dep_R_2 = [2*sqrt(2),sqrt(2)/(pi),1]
+linear_dep_R_3 = [1,1,1,1,1]
 
 
 
@@ -82,10 +82,10 @@ linear_dep_R_3 = [...]
 # For example, if you want to say that w equals 2*u+3*v, you would
 # assign 'w' to sum_to, assign 2 to u_coeff, and assign 3 to v_coeff.
 # (In this case, it would not matter what was assigned to w_coeff.)
-sum_to = ...
-u_coeff = ...
-v_coeff = ...
-w_coeff = ...
+sum_to = 'w'
+u_coeff = 1
+v_coeff = 1
+w_coeff = -1
 
 
 
