@@ -103,9 +103,9 @@ indep_vec_4 = Vec({...}, {})
 # For each subproblem, assign to the corresponding variable the list of
 # coefficients (0 or one) for which the linear combination is zero.
 
-zero_comb_1 = [...]
-zero_comb_2 = [...]
-zero_comb_3 = [...]
+zero_comb_1 = [one,one,0,one]
+zero_comb_2 = [0,one,one,one]
+zero_comb_3 = [one,one,0,0,one]
 
 
 
@@ -113,16 +113,16 @@ zero_comb_3 = [...]
 # In each subproblem, give your solution as a list of coefficients selected from {0, one}
 
 # [coeff of v1, coeff of v2, coeff of v3, coeff of v4, coeff of v5]
-sum_to_zero_1 = [...]
+sum_to_zero_1 = [0,one,0,one,one]
 
 # [coeff of v1, coeff of v2, coeff of v3, coeff of v4, coeff of v5, coeff of v7, coeff of v8]
-sum_to_zero_2 = [...]
+sum_to_zero_2 = [0,one,0,one,one,0,0]
 
 # [coeff of v1, coeff of v2, coeff of v3, coeff of v4, coeff of v6]
-sum_to_zero_3 = [...]
+sum_to_zero_3 = [one,0,one,one,one]
 
 # [coeff of v1, coeff of v2, coeff of v3, coeff of v5, coeff of v6, coeff of v7, coeff of v8]
-sum_to_zero_4 = [...]
+sum_to_zero_4 = [one,one,one,one,one,0,0]
 
 
 
